@@ -13,6 +13,16 @@ namespace vizibicikli
         int vOra;
         int vPerc;
 
+        public Kolcsonzes(string csvSor) 
+        {
+            var mezok = csvSor.Split(';');
+            this.nev = mezok[0];
+            this.jAzon = mezok[1][0];
+            this.eOra = int.Parse(mezok[2]);
+            this.ePerc = int.Parse(mezok[3]);
+            this.vOra = int.Parse(mezok[4]);
+            this.vPerc = int.Parse(mezok[5]);
+        }
         public Kolcsonzes(string nev, char jazon, int eOra, int ePerc, int vOra, int vPerc)
         {
             this.nev = nev;
