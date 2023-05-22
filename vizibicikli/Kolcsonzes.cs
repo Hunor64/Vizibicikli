@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace vizibicikli
@@ -13,6 +14,10 @@ namespace vizibicikli
         int vOra;
         int vPerc;
 
+        public int idoHossz()
+        {
+            return vOra * 60 + VPerc - (EOra * 60 + EPerc);
+        }
         public Kolcsonzes(string csvSor) 
         {
             var mezok = csvSor.Split(';');
