@@ -11,7 +11,7 @@ namespace vizibicikli
         static void Main(string[] args)
         {
             string fileLocation = "DataSource\\kolcsonzesek.txt";
-
+            /*
             //Hagyományos
             StreamReader sr = new StreamReader(fileLocation);
             sr.ReadLine();
@@ -26,13 +26,6 @@ namespace vizibicikli
                                                int.Parse(mezok[5]));
             }
             sr.Close();
-
-            //ReadAllLines + Foreach, konstruktorban bontom fel
-            List<Kolcsonzes> megMasikLista = new List<Kolcsonzes>();
-            foreach (var sor in File.ReadAllLines(fileLocation))
-            {
-                megMasikLista.Add(new Kolcsonzes(sor));
-            }
 
             //ReadAllLines + Foreach, itt bontom fel
             List<Kolcsonzes> megMasikMegintLista = new List<Kolcsonzes>();
@@ -60,7 +53,15 @@ namespace vizibicikli
                                           .Skip(1)
                                           .Select(x => new Kolcsonzes(x))
                                           .ToList();
+        */
+
+
+            //ReadAllLines + Foreach, konstruktorban bontom fel
+            List<Kolcsonzes> megMasikLista = new List<Kolcsonzes>();
+            foreach (var sor in File.ReadAllLines(fileLocation))
+            {
+                megMasikLista.Add(new Kolcsonzes(sor));
+            }
         }
-        private static Kolcsonzes ConvertCSVStringToKolcsonzes(string csvSor)
     }
 }
